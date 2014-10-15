@@ -6,3 +6,5 @@
 		<li><%= wine.year %> <%= link_to(wine.name, wine) %> from <%= wine.winery %> (<%= wine.varietal %>)</li>
 	<% end %>
 </ol>
+
+Know of a wine we're missing? Click <%= link_to 'Add a wine', new_wine_path %> to begin.
