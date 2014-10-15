@@ -6,4 +6,8 @@
 	<p><i><%= @wine.varietal %></i></p>
 </article>
 
-<%= link_to 'Back to all reviews', wines_path %>
+<p><%= link_to 'Edit this wine', edit_wine_path(@wine) %> or <%= link_to 'Back to all reviews', wines_path %></p>
+
+<%= button_to 'Delete', @wine,
+				method: :delete,
+				data: { confirm: 'Are you sure you want to delete this wine?' } %>
