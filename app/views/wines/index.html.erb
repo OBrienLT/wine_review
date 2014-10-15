@@ -3,6 +3,6 @@
 
 <ol>
 	<% @wines.each do |wine| %>
-		<li><%= wine.year %> <%= wine.name %> from <%= wine.winery %> (<%= wine.varietal %>)</li>
+		<li><%= wine.year %> <%= link_to(wine.name, wine) %> from <%= wine.winery %> (<%= wine.varietal %>)</li>
 	<% end %>
 </ol>

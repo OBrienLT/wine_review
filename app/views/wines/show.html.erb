@@ -1,2 +1,9 @@
-<h1>Wines#show</h1>
-<p>Find me in app/views/wines/show.html.erb</p>
+<article class = "wine">
+	<header>
+		<h2><%= @wine.year %> <%= @wine.name %></h2>
+	</header>
+	<p><%= @wine.winery %> (<%= @wine.country %>)</p>
+	<p><i><%= @wine.varietal %></i></p>
+</article>
+
+<%= link_to 'Back to all reviews', wines_path %>
