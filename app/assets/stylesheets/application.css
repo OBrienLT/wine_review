@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+
+ h1, h2 {
+ 	color:#990012;
+ }
+
+ h1.header {
+ 	font-family: "Brush Script MT", cursive;
+ 	font-size: 32pt;
+ 	text-align: center;
+ 	color: #990012;
+ }
+
+ h1.header a {
+ 	text-decoration: none;
+ 	color: #990012; 	
+ }
+
+ p.footer {
+ 	font-family: "Brush Script MT", cursive;
+ 	font-size: 14pt;
+ 	text-align: center;
+ 	color: #990012;
+ 	font-style: italic;
+ }
