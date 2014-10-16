@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :wines
 
+  root 'wines#index'
+
   # get "/wines" => "wines#index", as: 'wines'
  # get 'wines/index'
   # get "/wines/new" => "wines#new", as: 'new_wine'
