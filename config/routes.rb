@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'log_entries/index'
+
+  get 'log_entries/new'
+
+  get 'log_entries/create'
+
   resources :wines do
+    resources :log_entries
     get 'page/:page', :action => :index, :on => :collection
   end
 

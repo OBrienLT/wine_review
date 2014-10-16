@@ -9,4 +9,6 @@ class Wine < ActiveRecord::Base
 
 	validates :varietal, inclusion: { in: VARIETALS }
 
+	has_many: log_entries
+
 end
