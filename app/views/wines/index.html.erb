@@ -1,10 +1,12 @@
 <h1>Wines for Review</h1>
 <p>Current reviews:</p>
 
+<%= page_entries_info @wines %>
 <ol>
 	<% @wines.each do |wine| %>
 		<li><%= wine.year %> <%= link_to(wine.name, wine) %> from <%= wine.winery %> (<%= wine.varietal %>)</li>
 	<% end %>
 </ol>
+<%= paginate @wines %>
 
 Know of a wine we're missing? Click <%= link_to 'Add a wine', new_wine_path %> to begin.
