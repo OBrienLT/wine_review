@@ -1,2 +1,14 @@
-<h1>LogEntries#index</h1>
-<p>Find me in app/views/log_entries/index.html.erb</p>
+<h2>Log Entries for <%= link_to(@wine.name, @wine) %></h2>
+<ol id="log_entries">
+	<% @log_entries.each do |log_entry| %>
+		<li>
+			<span class="log_entry"><%= pluralize(log_entry.rating, 'star') %></span>
+			<span class="user">from <%= log_entry.name %> </span>
+			<span class="location">at <%= log_entry.location %> </span>
+			<span class="date">
+    			Tasted <%= time_ago_in_words(log_entry.tasted_on) %> ago
+  			</span>
+  			<p>&quot;<%= log_entry.comments %>&quot;</p>
+		</li>
+	<% end %>
+</ol>

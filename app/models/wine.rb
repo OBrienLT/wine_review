@@ -9,6 +9,10 @@ class Wine < ActiveRecord::Base
 
 	validates :varietal, inclusion: { in: VARIETALS }
 
-	has_many: log_entries
+	has_many :log_entries, dependent: :destroy
+
+	def average_log_entry
+		log_entries.average(:rating)
+	end
 
 end

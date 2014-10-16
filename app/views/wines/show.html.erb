@@ -4,7 +4,9 @@
 	</header>
 	<p><%= @wine.winery %> (<%= @wine.country %>)</p>
 	<p><i><%= @wine.varietal %></i></p>
+	<p><label>Average Rating:</label> <%= format_average_log_entry(@wine) %></p>
 </article>
+<p>Read all <%= link_to pluralize(@wine.log_entry.size, 'log entry'), wine_log_entries_path(@wine) %></p>
 
 <p><%= link_to 'Edit this wine', edit_wine_path(@wine) %> or <%= link_to 'Back to all reviews', wines_path %></p>
 
