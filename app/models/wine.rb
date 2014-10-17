@@ -1,5 +1,9 @@
 class Wine < ActiveRecord::Base
 
+	def average_log_entry
+		log_entries.average(:rating)
+	end
+
 	VARIETALS = [ "Barbera", "Cabernet Sauvignon", "Chardonnay", "Grenache", "Malbec", "Muscat", "Pinot Grigio", 
 		"Pinot Noir", "Riesling", "Sauvignon Blanc", "Zinfandel" ]
 
@@ -10,9 +14,5 @@ class Wine < ActiveRecord::Base
 	validates :varietal, inclusion: { in: VARIETALS }
 
 	has_many :log_entries, dependent: :destroy
-
-	def average_log_entry
-		log_entries.average(:rating)
-	end
 
 end

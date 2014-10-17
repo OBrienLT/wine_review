@@ -6,9 +6,11 @@
 	<p><i><%= @wine.varietal %></i></p>
 	<p><label>Average Rating:</label> <%= format_average_log_entry(@wine) %></p>
 </article>
-<p>Read all <%= link_to pluralize(@wine.log_entry.size, 'log entry'), wine_log_entries_path(@wine) %></p>
+<p>Read all <%= link_to pluralize(@wine.log_entries.size, 'log entry'), wine_log_entries_path(@wine) %></p>
 
-<p><%= link_to 'Edit this wine', edit_wine_path(@wine) %> or <%= link_to 'Back to all reviews', wines_path %></p>
+<%= link_to 'Write a New Log Entry', new_wine_log_entry_path(@wine) %>
+
+<p><%= link_to 'Edit this wine', edit_wine_path(@wine) %> or <%= link_to 'Back to all wines', wines_path %></p>
 
 <%= button_to 'Delete', @wine,
 				method: :delete,

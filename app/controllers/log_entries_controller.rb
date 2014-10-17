@@ -11,7 +11,7 @@ before_action :set_wine
   end
 
   def create
-    @log_entry = @wine.log_entry.new(log_entry_params)
+    @log_entry = @wine.log_entries.new(log_entry_params)
     if @log_entry.save
       redirect_to wine_log_entries_path(@wine), notice: 'Log Entry saved!'
     else
@@ -26,5 +26,6 @@ before_action :set_wine
   end
 
   def log_entry_params
-    params.require(:log_entry).permit(:rating, :name, :comments)
+    params.require(:log_entry).permit(:rating, :name, :comments, :tasted_on, :location)
+  end
 end

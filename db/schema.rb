@@ -18,10 +18,13 @@ ActiveRecord::Schema.define(version: 20141016065400) do
     t.integer  "rating"
     t.string   "location"
     t.string   "comments"
-    t.datetime "tested_on"
+    t.datetime "tasted_on"
+    t.integer  "wine_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "log_entries", ["wine_id"], name: "index_log_entries_on_wine_id"
 
   create_table "wines", force: true do |t|
     t.string   "name"
