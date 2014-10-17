@@ -12,3 +12,10 @@
 		</li>
 	<% end %>
 </ol>
+
+<%= link_to 'Create a Log Entry', new_wine_log_entry_path(@wine),
+		remote: true,
+		data: { 'update-target' => 'review_form_container' },
+		class: 'btn btn-primary' %>
+
+<div id="review_form_container"></div>
