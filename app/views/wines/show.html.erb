@@ -8,7 +8,12 @@
 </article>
 <p>Read all <%= link_to pluralize(@wine.log_entries.size, 'log entry'), wine_log_entries_path(@wine) %></p>
 
-<%= link_to 'Write a New Log Entry', new_wine_log_entry_path(@wine) %>
+<%= link_to 'Create a Log Entry', new_wine_log_entry_path(@wine),
+		remote: true,
+		data: { 'update-target' => 'review_form_container' },
+		class: 'btn btn-primary' %>
+
+<div id="review_form_container"></div>
 
 <p><%= link_to 'Edit this wine', edit_wine_path(@wine) %> or <%= link_to 'Back to all wines', wines_path %></p>
 
